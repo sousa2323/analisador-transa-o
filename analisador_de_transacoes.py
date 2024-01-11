@@ -6,7 +6,7 @@ import json
 load_dotenv()
 
 cliente = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
-modelo = "gpt-3.5-turbo-16k"
+modelo = "gpt-4"
 
 def carrega(nome_do_arquivo):
     try:
@@ -74,7 +74,7 @@ def analisar_transacao(lista_transacoes):
     )
 
     conteudo = resposta.choices[0].message.content.replace("'", '"')
-    print("Conteúdo:", conteudo)
+    print("\Conteúdo:", conteudo)
     json_resultado = json.loads(conteudo)
     print("\nJSON:", json_resultado)
     return json_resultado
